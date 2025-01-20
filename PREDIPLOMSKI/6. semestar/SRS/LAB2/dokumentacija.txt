@@ -1,0 +1,9 @@
+Pri koristenju login.py ili usermgmt.py komunikacija se odvija putem komandne linije. Pri svakoj komunikaciji se zahtjeva od korisnika da zna koje tocno naredbe su dozvoljene i zahtjevane. Ako se koristi usermgmt.py dozvoljene naredbe su: add, del, forcepass i passwd, a ukoliko se koristi login.py onda je potrebno navesti samo korisnicko ime i slijediti upute sustava.
+
+Unutar usermgmt.py, ovisno o danoj naredbi, zahtjevat ce se lozinka duljine 8 ili vise znakova, barem jedno malo i veliko slovo te neki broj i poseban znak kako bi sustav prihvatio danu lozinku. Zahtjeva se unutar svih naredbi i navodenje korisnickog imena. 
+
+Za login.py takoder vrijede navedeni zahtjevi za sifru. Ukoliko se trazi promjena sifre prvo je potrebno navesti trenutnu sifru te novu sifru i ponovno novu sifru kako bi se potvrdila promjena. Ako se ne trazi promjena lozinke onda ce se unosom prave lozinke izvesti 'bash$'.
+
+Sve lozinke u bazi su pohranjene hashirane zajedno sa saltom, korisnickim imenom te zastavicom za promjenu lozinke.
+
+Ovo su neki od zadovoljenih sigurnosnih zahtjeva. Lozinke smo spremili hashirane jednoznacno, lozinke znaju samo korisnici (ili admin ukoliko na svoju ruku promjeni lozinku korisnickog racuna). Hash je ireverzibilan te je sigurnost sustava zagarantirana. Lozinke se pri promjeni hashiraju sa novom salt te novom sifrom, pogadanje sifre je uzaludno, kada se sifre unose nitko ih ne moze vidjeti jer se ne ispisuju nigdje.

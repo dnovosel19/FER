@@ -1,0 +1,9 @@
+Prvo pozivamo naredbu "sudo imunes NETWORK.imn" te pokrecemo eksperiment (Experiment -> Execute). Zatim u novom terminalu upisujemo naredbu "sudo ./prepare.sh" i sa "sudo himage www", "ps -ax", "netstat -anp4", "ss -an4", "ss -anp4" provjeravamo pokrenute usluge na pojedinom cvoru.
+
+Pokrecemo Wireshark na eth0 cvora FW. Otvaramo terminal na cvoru client te upisujemo "telnet 203.0.113.100" te upisujemo nesto za login, odnosno password. Koristeci "Follow TCP stream" vidimo da se charactersi od unosa za login zapisuju dva puta, a za password tocno ono sto smo upisali.
+
+Otvaramo novi terminal te pozivamo "sudo su", zatim "himage client" te "curl http://www.example.edu/index.html" i "curl http://203.0.113.100/index.html" te to isto napravimo sa "himage pc". Vidimo da dobivamo html oblik obje stranice. Također pozivom naredbe "host www.example.com" za client-a dobivamo adresu 198.51.100.10.
+
+Također isprobavamo "himage client nmap -n -Pn "-p20-25,53,80,443" 203.0.113.100", gdje vidimo kojim portovima client ima pristup. Izvodimo naredbu "sudo ./install_fw.sh".
+
+Skeniranje se izvodi sa adrese 10.26.163.192 (38:d4:38:4b:90:38). Skenira se 10.26.163.236 (38:d4:26:e7:84:be). 10.26.163.236 (38:d4:26:e7:84:be) je otvoren, a 10.26.163.192 (38:d4:38:4b:90:38) je zatvoren.

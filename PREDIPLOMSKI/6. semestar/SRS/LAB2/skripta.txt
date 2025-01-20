@@ -1,0 +1,72 @@
+Dodavanje korisnika u bazu:
+
+python .\usermgmt.py add dominik
+Password: Dominik7/
+Repeat Password: Dominik7/
+User dominik successfuly added.
+
+python .\usermgmt.py add krivo
+Password: Domkkoa=0'
+Repeat Password: Dom
+User add failed. Password mismatch.
+
+python .\usermgmt.py add sef
+Password: Zaboid123-
+Repeat Password: Zaboid123-
+User sef successfuly added.
+
+python .\usermgmt.py add dominik
+Cannot add a new user with the same username.
+
+python .\usermgmt.py add sef123
+Password: Zaboid123-22
+Repeat Password: Zaboid123-22
+User sef123 successfuly added.
+
+
+Promjeni lozinku:
+
+python .\usermgmt.py passwd sef
+Password: 123-Zaboid
+Repeat Password: 123-Zaboid
+Password change successful.
+
+python .\usermgmt.py passwd sef
+Password: 123-Zab
+Repeat Password: 123-Zaboid
+Password change failed. Password mismatch.
+
+
+Zahtjevaj promjenu:
+
+python .\usermgmt.py forcepass sef
+User will be requested to change password on next login.
+
+
+Izbrisan korisnik:
+
+python .\usermgmt.py del sef123
+User successfuly removed.
+
+
+Prijava u sustav:
+
+python .\login.py dominik
+Password: Dominik7/
+bash$
+
+python .\login.py dominik
+Password: Krivi
+Username or password incorrect
+
+python .\login.py sef
+Password: 123-Zaboid
+New password: ZABlec777+
+Repeat new password: ZABlec777
+Password change failed. Password mismatch.
+
+python .\login.py sef
+Password: 123-Zaboid
+New password: ZABlec777+
+Repeat new password: ZABlec777+
+bash$

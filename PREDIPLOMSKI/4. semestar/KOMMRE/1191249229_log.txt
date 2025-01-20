@@ -1,0 +1,24 @@
+Korištene naredbe i ispis nakon izvršenja naredbe:
+
+(generiranje privatnog kljuca, generiranje public kljuca iz privatnog)
+1. openssl dgst –sha256 1191249229.imn > hash
+
+2. openssl genrsa –out private.pem 2048
+Generating RSA private key, 2048 bit long modulus
+…………..+++++
+……………………………………….+++++
+e is 65537 (0x10001)
+
+3. openssl rsa –in private.pem –outform PEM –pubout –out 1191249229.pem
+writing RSA key
+
+(potpisivanje pomocu privatnog kljuca i provjera)
+4. openssl rsautl –sign –inkey private.pem –keyform PEM –in hash > 1191249229.sig
+
+5. openssl rsautl –verify –inkey 1191249229.pem –pubin –keyform PEM –in 1191249229.sig
+SHA256(1191249229.imn)= 31e7e0bcec807981aa5580d6cd372da9825d7a3e662b0c787b6d9ed52e6680b5
+
+6. openssl sha256 1191249229.imn
+7. SHA256(1191249229.imn)= 31e7e0bcec807981aa5580d6cd372da9825d7a3e662b0c787b6d9ed52e6680b5
+
+
