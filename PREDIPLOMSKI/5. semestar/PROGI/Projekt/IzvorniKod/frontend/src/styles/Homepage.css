@@ -1,0 +1,289 @@
+.curs-poi {
+  cursor: pointer;
+}
+
+.curs-ptr {
+  cursor: default;
+}
+
+.organization {
+  width: 30%;
+}
+
+.homepage-container {
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  text-align: center;
+}
+
+.boxx {
+  background: linear-gradient(178deg, #ff5a5a, #ffffff, #ff5353);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
+}
+
+.blood-group {
+  width: 20%;
+}
+
+.selected-info {
+  margin-top: 50px;
+  border: 1px solid #ddd;
+  padding: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.nasl1 {
+  color: #333;
+  font-size: 25px;
+}
+
+/* label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+} */
+
+/* select {
+  width: 50%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+} */
+
+.hombtn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hombtn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+.cba {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.abc {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  background-color: #3498db;
+  color: white;
+}
+
+/* .organization-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.organization-list li {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.organization-list li.selected {
+  background-color: #3498db;
+  color: white;
+} */
+
+.blood-supplies-section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* .link-to-blood-supplies {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.link-to-blood-supplies:hover {
+  background-color: #3498db;
+} */
+
+.blood-supply-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.7s ease-in;
+}
+
+.blood-supply-vial {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.vial-container {
+  position: relative;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.vial-filling {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #e74c3c;
+}
+
+.bsvp {
+  text-align: center;
+}
+
+/* .dropdown-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+} */
+
+/* .dropdown-button {
+  background-color: #f0f0f0;
+  border: none;
+  color: black;
+  padding: 10px;
+  margin-left: -5em;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #e74c3c;
+  color: #fff;
+  transition: background-color 0.3s ease;
+} */
+
+/* .dropdown-options {
+  position: absolute;
+  top: 3em;
+  left: 4em;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-left: 2em;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
+/* .dropdown-option {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-option:hover {
+  background-color: #f2f2f2;
+} */
+
+/* .footer {
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+} */
+/* .organization-dropdown-container {
+  margin-top: 50px;
+  padding: 30px;
+  font-size: 25px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+/* .footer div {
+  cursor: pointer;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    max-height: 1000px;
+  }
+
+  to {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+/* .logout {
+  padding: 20px;
+} */

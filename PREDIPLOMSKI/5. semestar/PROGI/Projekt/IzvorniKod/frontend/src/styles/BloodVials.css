@@ -1,0 +1,53 @@
+.blood-supply-vial {
+  width: 70px;
+  margin: 0 20px;
+  margin-top: 30px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.vial-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.vial-filling {
+  background-color: #ff0000;
+  height: 50%;
+}
+
+.vial-container::before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  bottom: 20%;
+  width: 75%;
+  padding: 1px;
+  height: 2px; 
+  background-color: red;
+  z-index: 1; 
+}
+
+.vial-container::after {
+  content: '';
+  position: absolute;
+  right: -25%;
+  padding: 1px;
+  bottom: 85%;
+  width: 75%;
+  height: 2px; 
+  background-color: green;
+  z-index: 1; 
+}
+
+.blood-supply-vial p {
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+  position: relative; 
+  z-index: 2;
+}

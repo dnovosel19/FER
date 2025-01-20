@@ -1,0 +1,11 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    justify-content: space-around;
+    background-image: linear-gradient(rgb(58, 75, 127), rgb(221, 176, 176));
+}

@@ -1,0 +1,12 @@
+.container_map{
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    height: 350px;
+    width: 450px;
+    border: 2px rgb(108, 108, 108) solid;
+}
+.map{
+    height: 100%;
+    width: 100%;
+}

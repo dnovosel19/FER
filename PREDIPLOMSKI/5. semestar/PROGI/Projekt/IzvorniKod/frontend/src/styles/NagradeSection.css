@@ -1,0 +1,21 @@
+#nagrade {
+    margin-top: 150px;
+    margin-left: 150px;
+    margin-bottom: 250px;
+}
+
+.donors-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.donors-table th, .donors-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.donors-table th {
+    background-color: #2980b9;
+}

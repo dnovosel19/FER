@@ -1,0 +1,135 @@
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-image: linear-gradient(rgb(58, 75, 127), rgb(221, 176, 176)); */
+    display: flex;
+    width: 100%;
+    min-height: calc(100% - 0px);
+    justify-content: center;
+    background: linear-gradient(360deg, #3a4b7f, #ddb0b0);
+    background-size: 120% 120%;
+    animation: gradient-animation 2s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.register2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450px;
+    margin: 25px;
+    margin-top: 7%;
+    max-height: 1000px;
+    /* background-color: rgb(242, 237, 241); */
+    background-image: linear-gradient(#f2edf1, #ffffff);
+    border-radius: 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.form-reg {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content: space-between;
+    padding: 30px 25px 30px 25px;
+}
+.form-reg-organization {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content: space-between;
+    padding: 30px 25px 30px 25px;
+}
+
+.footer2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 25px 25px 25px;
+}
+
+.error-reg {
+    text-align: center;
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    padding: 0 25px 25px 25px;
+}
+
+.title-reg {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.err {
+    margin-bottom: 2px;
+    margin-top: 0;
+    color: red;
+    font-size: 0.9em;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.naslov-reg {
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.blood-type {
+    width: 60%;
+}
+
+.name-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.divider-div {
+    width: 10%;
+}
+
+.text-field {
+    margin-bottom: 10px;
+    width: 45%;
+}
+
+.text-div {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.organization {
+    width: 105px;
+}
+
+.go-back1 {
+    position: fixed;
+    top: 15%;
+    left: 2%;
+}

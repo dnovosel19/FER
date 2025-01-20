@@ -1,0 +1,24 @@
+.blood-supplies-container {
+  margin: 20px;
+}
+
+.blood-supplies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.blood-supplies-table th, .blood-supplies-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.blood-supplies-table th {
+  background-color: #2980b9;
+}
+.blood-vials-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
