@@ -43,7 +43,7 @@ int main() {
 
     double t1 = omp_get_wtime();
     
-    #pragma omp parallel sections
+    #pragma omp parallel sections   // sekcije
     {
         #pragma omp section
         producer();
